@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment - RentEase</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+  <header>
+    <div class="logo">RentEase</div>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Explore Cars</a>
+      <a href="#">About Us</a>
+    </nav>
+    <div class="info">
+      <p><strong>WED, 24 January 2025</strong><br><span>Mon - Sat: 09:00 AM - 06:00PM</span></p>
+      <button>Explore</button>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <p><span>Beranda</span> > <span>Order</span> > <strong>Payment</strong></p>
+  </div>
+
+  <main class="payment-container">
+    <!-- Product List -->
+    <section class="product-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Payment_ID</th>
+            <th>Order_ID</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="product-info">
+                <button class="remove-btn">×</button>
+                <img src="alphard.jpg" alt="Toyota Alphard">
+                <span>Toyota Alphard</span>
+              </div>
+            </td>
+            <td>D00202504</td>
+            <td>P092025003</td>
+            <td>28 - 01 - 2025</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="coupon-section">
+        <input type="text" placeholder="coupon code">
+        <button class="apply-btn">APPLY COUPON</button>
+        <button class="update-btn">UPDATE CART</button>
+      </div>
+    </section>
+
+    <!-- Payment Options -->
+    <section class="payment-options">
+      <form>
+        <label><input type="radio" name="payment"> Cash</label><br>
+        <label><input type="radio" name="payment"> E-Wallet Dana <img src="dana.jpg" width="50"></label><br>
+        <label><input type="radio" name="payment"> Virtual Account BCA <img src="bca.jpeg" width="50"></label><br>
+        <label><input type="radio" name="payment"> Other ...</label><br><br>
+
+        <label><input type="checkbox" required> I have read and agree to the website terms and conditions</label><br><br>
+
+        <button type="button" class="qr-btn">KODE QR</button>
+        <button type="submit" class="pay-btn">BAYAR SEKARANG</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

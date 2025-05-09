@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Order - RentEase</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+  <header>
+    <div class="logo">RentEase</div>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Explore Cars</a>
+      <a href="#">About Us</a>
+    </nav>
+    <div class="info">
+      <p><strong>WED, 24 January 2025</strong><br><span>Mon - Sat: 09:00 AM - 06:00PM</span></p>
+      <button>Explore</button>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <p><span>Beranda</span> > <strong>Order</strong></p>
+  </div>
+
+  <main class="order-container">
+    <!-- Billing Details -->
+    <section class="billing-details">
+      <h3>Billing Details</h3>
+      <form>
+        <label>ORDER_ID</label>
+        <input type="text" value="P092025003" readonly>
+
+        <label>USER_ID</label>
+        <input type="text" value="U20251945" readonly>
+
+        <label>VEHICLE_ID</label>
+        <input type="text" value="K8825" readonly>
+
+        <label>PHONE NUMBER</label>
+        <input type="text" value="089514677754">
+
+        <label>EMAIL</label>
+        <input type="email" value="alan88@gmail.com">
+      </form>
+    </section>
+
+    <!-- Order Summary -->
+    <section class="order-summary">
+      <h3>Your Order</h3>
+      <div class="product-summary">
+        <div class="row">
+          <span>Product</span>
+          <span>Subtotal</span>
+        </div>
+        <div class="row">
+          <span>Toyota Alphard</span>
+          <span>Rp800,000</span>
+        </div>
+        <div class="details">
+          <p><strong>Day:</strong> 2</p>
+          <p><strong>From:</strong> 28-Jan-2025</p>
+          <p><strong>To:</strong> 30-Jan-2025</p>
+        </div>
+      </div>
+
+      <div class="cart-total">
+        <div class="row">
+          <span>Subtotal</span>
+          <span>Rp1.600.000</span>
+        </div>
+        <div class="row">
+          <span>Surcharge</span>
+          <span>Rp20.000</span>
+        </div>
+        <div class="row total">
+          <span>Total</span>
+          <span>Rp1.620.000</span>
+        </div>
+      </div>
+
+      <button class="checkout-btn">PROCEEDED TO CHECKOUT</button>
+    </section>
+  </main>
+</body>
+</html>

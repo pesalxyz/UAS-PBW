@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEase - Explore Cars</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="explore.css">
+</head>
+
+<body>
+    <header class="gradient-header shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-red-600 font-bold text-xl">R</span>
+                    </div>
+                    <span class="text-3xl font-bold text-white">RentEase</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="beranda.html" class="text-red-100 font-medium nav-link">Dashboard</a>
+                    <a href="explore.html" class="text-white font-medium nav-link">Explore Cars</a>
+                    <a href="#" class="text-red-100 font-medium nav-link">About Us</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4 relative">
+                    <button id="notificationBtn" class="p-2 hover:bg-red-700 rounded-full transition duration-300 relative">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-yellow-400 rounded-full"></span>
+                    </button>
+                    
+                    <!-- Notification Bar -->
+                    <div id="notificationBar" class="absolute right-0 top-12 w-80 bg-white rounded-lg shadow-xl z-50">
+                        <div class="p-4 border-b border-gray-100">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-bold text-gray-800">Notifications</h3>
+                                <span class="text-xs text-blue-600 cursor-pointer hover:underline">Mark all as read</span>
+                            </div>
+                        </div>
+                        <div class="max-h-96 overflow-y-auto">
+                            <!-- Notification items -->
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 transition duration-300">
+                                <div class="flex items-start">
+                                    <div class="bg-red-100 p-2 rounded-full">
+                                        <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Your BMW 3 Series rental ends tomorrow</p>
+                                        <p class="text-xs text-gray-500 mt-1">2 hours ago</p>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 transition duration-300">
+                                <div class="flex items-start">
+                                    <div class="bg-green-100 p-2 rounded-full">
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Payment for Audi A4 rental confirmed</p>
+                                        <p class="text-xs text-gray-500 mt-1">Yesterday</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 transition duration-300">
+                                <div class="flex items-start">
+                                    <div class="bg-blue-100 p-2 rounded-full">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">Special offer: 15% off your next rental!</p>
+                                        <p class="text-xs text-gray-500 mt-1">2 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <button class="text-sm text-red-600 font-medium hover:underline">View all notifications</button>
+                        </div>
+                    </div>
+                    
+                    <a href="profile.html" class="inline-block">
+                        <button class="bg-white text-red-600 rounded-lg px-6 py-2 flex items-center font-medium transition duration-300 hover:bg-gray-100">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                            Profile
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-10">
+        <!-- Hero Section -->
+        <div class="card p-8 mb-8 animate-fade-in">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-900 mb-2">Find Your Perfect Car</h1>
+                    <p class="text-gray-600 text-lg">Browse our collection and find the right vehicle for your needs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Section -->
+        <div class="card p-6 mb-8 animate-fade-in">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <input type="text" id="searchBar" placeholder="🔍 Search by Car, Model, or Brand" class="search-input">
+                </div>
+                <div class="flex space-x-4">
+                    <select class="search-input bg-white">
+                        <option>All Types</option>
+                        <option>Sedan</option>
+                        <option>SUV</option>
+                        <option>Hatchback</option>
+                        <option>MPV</option>
+                    </select>
+                    <button class="btn-primary md:w-auto">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Car List Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Recommendation</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="carList">
+                <!-- Car Card 1 -->
+                <div class="car-card">
+                    <div class="h-48 mb-4 rounded-lg overflow-hidden">
+                        <img src="bmw i320.jpg" alt="BMW i320" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">BMW i320</h3>
+                    <div class="car-specs mb-4">
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                            4 People
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Hybrid
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            7.1 km/Litre
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Automatic
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <p class="text-lg"><span class="text-lg font-bold text-red-600">Rp. 600.000</span> / Day</p>
+                        <button class="btn-primary w-auto">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car Card 2 -->
+                <div class="car-card">
+                    <div class="h-48 mb-4 rounded-lg overflow-hidden">
+                        <img src="alphard.jpg" alt="Toyota Alphard" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Toyota Alphard</h3>
+                    <div class="car-specs mb-4">
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                            8 People
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Hybrid
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            8.1 km/Litre
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Automatic
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <p class="text-lg"><span class="text-lg font-bold text-red-600">Rp. 800.000</span> / Day</p>
+                        <button class="btn-primary w-auto">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car Card 3 -->
+                <div class="car-card">
+                    <div class="h-48 mb-4 rounded-lg overflow-hidden">
+                        <img src="innova reborn.jpg" alt="Innova Rebord 2019" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Innova Rebord 2019</h3>
+                    <div class="car-specs mb-4">
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                            4 People
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Hybrid
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            7.1 km/Litre
+                        </div>
+                        <div class="car-spec-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Automatic
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <p class="text-lg"><span class="text-lg font-bold text-red-600">Rp. 500.000</span> / Day</p>
+                        <button class="btn-primary w-auto">Rent Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Promotion Banner -->
+        <div class="promotion-gradient rounded-lg p-8 mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Special Weekend Offer!</h2>
+                    <p class="text-red-100 mb-4">Get 15% off on weekend rentals with code</p>
+                    <div class="inline-flex items-center bg-white rounded-lg px-4 py-2">
+                        <span class="text-red-600 font-bold mr-2">WEEKEND15</span>
+                        <button class="text-red-600 hover:text-red-700 transition duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <button class="bg-white text-red-600 px-8 py-3 rounded-lg font-medium hover:bg-red-50 transition duration-300">
+                        Claim Offer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="explore.js"></script>
+</body>
+
+</html>
